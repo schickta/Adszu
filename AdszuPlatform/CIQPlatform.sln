@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "CIQPlatform", "WindowsAzureProject1\CIQPlatform.ccproj", "{8B9EBC4F-37CC-4803-828D-C9D68F2FB5FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFServiceWebRole", "WCFServiceWebRole1\WCFServiceWebRole.csproj", "{48B79052-3A4B-433B-B0BC-A65471078659}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8B9EBC4F-37CC-4803-828D-C9D68F2FB5FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B9EBC4F-37CC-4803-828D-C9D68F2FB5FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B9EBC4F-37CC-4803-828D-C9D68F2FB5FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B9EBC4F-37CC-4803-828D-C9D68F2FB5FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48B79052-3A4B-433B-B0BC-A65471078659}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48B79052-3A4B-433B-B0BC-A65471078659}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48B79052-3A4B-433B-B0BC-A65471078659}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48B79052-3A4B-433B-B0BC-A65471078659}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

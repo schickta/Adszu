@@ -1,0 +1,490 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CIQPlatformModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="CIQPlatformModelStoreContainer">
+          <EntitySet Name="Bids" EntityType="CIQPlatformModel.Store.Bids" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Brands" EntityType="CIQPlatformModel.Store.Brands" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Company" EntityType="CIQPlatformModel.Store.Company" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="DiscountAds" EntityType="CIQPlatformModel.Store.DiscountAds" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Impressions" EntityType="CIQPlatformModel.Store.Impressions" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MappingCodes" EntityType="CIQPlatformModel.Store.MappingCodes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Member" EntityType="CIQPlatformModel.Store.Member" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProductClasses" EntityType="CIQPlatformModel.Store.ProductClasses" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProductCodes" EntityType="CIQPlatformModel.Store.ProductCodes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ProductTaxonomy" EntityType="CIQPlatformModel.Store.ProductTaxonomy" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ScanActivity" EntityType="CIQPlatformModel.Store.ScanActivity" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Bids_0" Association="CIQPlatformModel.Store.FK_Bids_0">
+            <End Role="DiscountAds" EntitySet="DiscountAds" />
+            <End Role="Bids" EntitySet="Bids" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Bids">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ProdCategory" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProdSubcategory" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProdClass" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProdBlob" Type="nvarchar(max)" />
+          <Property Name="AssociatedAd" Type="int" />
+          <Property Name="MarketerID" Type="int" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Region" Type="nvarchar" MaxLength="50" />
+          <Property Name="TimeOfDay" Type="nvarchar" MaxLength="50" />
+          <Property Name="DayOfWeek" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Brands">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="BrandName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="cID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Website" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Type" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DiscountAds">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="MarketerID" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="AdText" Type="nvarchar(max)" />
+          <Property Name="ImageUrl" Type="nvarchar(max)" />
+          <Property Name="DiscountAmount" Type="float" Nullable="false" />
+          <Property Name="DiscountIsPercentage" Type="bit" Nullable="false" />
+          <Property Name="DiscountCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="BrandImageUrl" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Impressions">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="CompositeID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="CompanyID" Type="int" Nullable="false" />
+          <Property Name="MarketerID" Type="int" Nullable="false" />
+          <Property Name="BidID" Type="int" Nullable="false" />
+          <Property Name="Impressions" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MappingCodes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="MappedCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ProductCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="First" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Last" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="EMail" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserID" Type="nvarchar" Nullable="false" MaxLength="16" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="16" />
+          <Property Name="CoID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductClasses">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Category" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Subcategory" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ProductClass" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ProductCodes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ProductCode" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ProdBlob" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ProdClass" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ProdCategory" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProdSubcategory" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ProductTaxonomy">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ProductClass" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Property" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ValidValues" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ScanActivity">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="DateTime" Type="datetime" Nullable="false" />
+          <Property Name="ScanData" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Longitude" Type="float" Nullable="false" />
+          <Property Name="Latitude" Type="float" Nullable="false" />
+          <Property Name="Category" Type="nvarchar" MaxLength="50" />
+          <Property Name="Subcategory" Type="nvarchar" MaxLength="50" />
+          <Property Name="Classification" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductBlob" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK_Bids_0">
+          <End Role="DiscountAds" Type="CIQPlatformModel.Store.DiscountAds" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Bids" Type="CIQPlatformModel.Store.Bids" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DiscountAds">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Bids">
+              <PropertyRef Name="AssociatedAd" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CIQPlatformModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="CIQPlatformEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ProductClasses" EntityType="CIQPlatformModel.ProductClass" />
+          <EntitySet Name="ProductCodes" EntityType="CIQPlatformModel.ProductCode" />
+          <EntitySet Name="ProductTaxonomies" EntityType="CIQPlatformModel.ProductTaxonomy" />
+          <EntitySet Name="MappingCodes" EntityType="CIQPlatformModel.MappingCode" />
+          <EntitySet Name="ScanActivities" EntityType="CIQPlatformModel.ScanActivity" />
+          <EntitySet Name="Brands" EntityType="CIQPlatformModel.Brand" />
+          <EntitySet Name="Companies" EntityType="CIQPlatformModel.Company" />
+          <EntitySet Name="Members" EntityType="CIQPlatformModel.Member" />
+          <EntitySet Name="Bids" EntityType="CIQPlatformModel.Bid" />
+          <EntitySet Name="DiscountAds" EntityType="CIQPlatformModel.DiscountAd" />
+          <AssociationSet Name="FK_Bids_0" Association="CIQPlatformModel.FK_Bids_0">
+            <End Role="DiscountAd" EntitySet="DiscountAds" />
+            <End Role="Bid" EntitySet="Bids" />
+          </AssociationSet>
+          <EntitySet Name="Impressions" EntityType="CIQPlatformModel.Impression" />
+        </EntityContainer>
+        <EntityType Name="ProductClass">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Category" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Subcategory" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ProductClass1" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ProductCode">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductCode1" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ProdBlob" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ProdClass" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ProdCategory" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ProdSubcategory" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="ProductTaxonomy">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ProductClass" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Property" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ValidValues" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="MappingCode">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="MappedCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProductCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ScanActivity">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="DateTime" Name="DateTime" Nullable="false" />
+          <Property Type="String" Name="ScanData" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="Longitude" Nullable="false" />
+          <Property Type="Double" Name="Latitude" Nullable="false" />
+          <Property Type="String" Name="Category" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Subcategory" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Classification" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProductBlob" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="BrandName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="cID" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Website" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Type" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="First" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Last" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EMail" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Phone" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UserID" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Password" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CoID" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bid">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="ProdCategory" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProdSubcategory" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProdClass" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProdBlob" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="AssociatedAd" />
+          <Property Type="Int32" Name="MarketerID" />
+          <NavigationProperty Name="DiscountAd" Relationship="CIQPlatformModel.FK_Bids_0" FromRole="Bid" ToRole="DiscountAd" />
+          <Property Type="String" Name="Title" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Region" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TimeOfDay" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DayOfWeek" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="DiscountAd">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Int32" Name="MarketerID" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AdText" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImageUrl" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="DiscountAmount" Nullable="false" />
+          <Property Type="Boolean" Name="DiscountIsPercentage" Nullable="false" />
+          <Property Type="String" Name="DiscountCode" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BrandImageUrl" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Bids" Relationship="CIQPlatformModel.FK_Bids_0" FromRole="DiscountAd" ToRole="Bid" />
+        </EntityType>
+        <Association Name="FK_Bids_0">
+          <End Type="CIQPlatformModel.DiscountAd" Role="DiscountAd" Multiplicity="0..1" />
+          <End Type="CIQPlatformModel.Bid" Role="Bid" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DiscountAd">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Bid">
+              <PropertyRef Name="AssociatedAd" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Impression">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" />
+          <Property Type="String" Name="CompositeID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Date" Nullable="false" />
+          <Property Type="Int32" Name="CompanyID" Nullable="false" />
+          <Property Type="Int32" Name="MarketerID" Nullable="false" />
+          <Property Type="Int32" Name="BidID" Nullable="false" />
+          <Property Type="Int64" Name="Impressions" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CIQPlatformModelStoreContainer" CdmEntityContainer="CIQPlatformEntities">
+          <EntitySetMapping Name="ProductClasses"><EntityTypeMapping TypeName="CIQPlatformModel.ProductClass"><MappingFragment StoreEntitySet="ProductClasses">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Category" ColumnName="Category" />
+            <ScalarProperty Name="Subcategory" ColumnName="Subcategory" />
+            <ScalarProperty Name="ProductClass1" ColumnName="ProductClass" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ProductCodes"><EntityTypeMapping TypeName="CIQPlatformModel.ProductCode"><MappingFragment StoreEntitySet="ProductCodes">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="ProductCode1" ColumnName="ProductCode" />
+            <ScalarProperty Name="ProdBlob" ColumnName="ProdBlob" />
+            <ScalarProperty Name="ProdClass" ColumnName="ProdClass" />
+            <ScalarProperty Name="ProdCategory" ColumnName="ProdCategory" />
+            <ScalarProperty Name="ProdSubcategory" ColumnName="ProdSubcategory" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ProductTaxonomies"><EntityTypeMapping TypeName="CIQPlatformModel.ProductTaxonomy"><MappingFragment StoreEntitySet="ProductTaxonomy">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="ProductClass" ColumnName="ProductClass" />
+            <ScalarProperty Name="Property" ColumnName="Property" />
+            <ScalarProperty Name="ValidValues" ColumnName="ValidValues" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="MappingCodes">
+            <EntityTypeMapping TypeName="CIQPlatformModel.MappingCode">
+              <MappingFragment StoreEntitySet="MappingCodes">
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="MappedCode" ColumnName="MappedCode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ScanActivities">
+            <EntityTypeMapping TypeName="CIQPlatformModel.ScanActivity">
+              <MappingFragment StoreEntitySet="ScanActivity">
+                <ScalarProperty Name="ProductBlob" ColumnName="ProductBlob" />
+                <ScalarProperty Name="Classification" ColumnName="Classification" />
+                <ScalarProperty Name="Subcategory" ColumnName="Subcategory" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="ScanData" ColumnName="ScanData" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Brands">
+            <EntityTypeMapping TypeName="CIQPlatformModel.Brand">
+              <MappingFragment StoreEntitySet="Brands">
+                <ScalarProperty Name="cID" ColumnName="cID" />
+                <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Companies">
+            <EntityTypeMapping TypeName="CIQPlatformModel.Company">
+              <MappingFragment StoreEntitySet="Company">
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Members">
+            <EntityTypeMapping TypeName="CIQPlatformModel.Member">
+              <MappingFragment StoreEntitySet="Member">
+                <ScalarProperty Name="CoID" ColumnName="CoID" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="EMail" ColumnName="EMail" />
+                <ScalarProperty Name="Last" ColumnName="Last" />
+                <ScalarProperty Name="First" ColumnName="First" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bids">
+            <EntityTypeMapping TypeName="CIQPlatformModel.Bid">
+              <MappingFragment StoreEntitySet="Bids">
+                <ScalarProperty Name="DayOfWeek" ColumnName="DayOfWeek" />
+                <ScalarProperty Name="TimeOfDay" ColumnName="TimeOfDay" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="MarketerID" ColumnName="MarketerID" />
+                <ScalarProperty Name="AssociatedAd" ColumnName="AssociatedAd" />
+                <ScalarProperty Name="ProdBlob" ColumnName="ProdBlob" />
+                <ScalarProperty Name="ProdClass" ColumnName="ProdClass" />
+                <ScalarProperty Name="ProdSubcategory" ColumnName="ProdSubcategory" />
+                <ScalarProperty Name="ProdCategory" ColumnName="ProdCategory" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DiscountAds">
+            <EntityTypeMapping TypeName="CIQPlatformModel.DiscountAd">
+              <MappingFragment StoreEntitySet="DiscountAds">
+                <ScalarProperty Name="BrandImageUrl" ColumnName="BrandImageUrl" />
+                <ScalarProperty Name="DiscountCode" ColumnName="DiscountCode" />
+                <ScalarProperty Name="DiscountIsPercentage" ColumnName="DiscountIsPercentage" />
+                <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="AdText" ColumnName="AdText" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="MarketerID" ColumnName="MarketerID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Impressions">
+            <EntityTypeMapping TypeName="CIQPlatformModel.Impression">
+              <MappingFragment StoreEntitySet="Impressions">
+                <ScalarProperty Name="Impressions" ColumnName="Impressions" />
+                <ScalarProperty Name="BidID" ColumnName="BidID" />
+                <ScalarProperty Name="MarketerID" ColumnName="MarketerID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="CompositeID" ColumnName="CompositeID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="CIQPlatformModel" ZoomLevel="64">
+        <EntityTypeShape EntityType="CIQPlatformModel.ProductClass" Width="1.5" PointX="2.5" PointY="3.625" Height="1.7879850260416657" IsExpanded="true" />
+        <EntityTypeShape EntityType="CIQPlatformModel.ProductCode" Width="1.5" PointX="6.25" PointY="0.5" Height="2.3648893229166656" IsExpanded="true" />
+        <EntityTypeShape EntityType="CIQPlatformModel.ProductTaxonomy" Width="1.5" PointX="4.5" PointY="3.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="CIQPlatformModel.MappingCode" Width="1.5" PointX="0.625" PointY="4.125" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="CIQPlatformModel.ScanActivity" Width="1.5" PointX="4.375" PointY="0.5" Height="2.7494921874999996" />
+        <EntityTypeShape EntityType="CIQPlatformModel.Brand" Width="1.5" PointX="8.5" PointY="0.625" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="CIQPlatformModel.Company" Width="1.5" PointX="10.5" PointY="0.625" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="CIQPlatformModel.Member" Width="1.5" PointX="12.5" PointY="0.625" Height="2.5571907552083317" />
+        <EntityTypeShape EntityType="CIQPlatformModel.Bid" Width="1.5" PointX="0.625" PointY="0.5" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="CIQPlatformModel.DiscountAd" Width="1.5" PointX="2.625" PointY="0.5" Height="2.7494921875000031" />
+        <AssociationConnector Association="CIQPlatformModel.FK_Bids_0" >
+          <ConnectorPoint PointX="2.625" PointY="1.7785953776041668" />
+          <ConnectorPoint PointX="2.125" PointY="1.7785953776041668" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="CIQPlatformModel.Impression" Width="1.5" PointX="6.375" PointY="3.75" Height="2.3648893229166674" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

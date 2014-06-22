@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CIQAdServices" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://127.0.0.1:81/CIQAdServices.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/CIQAdServices.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/CIQAdServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCFServiceWebRole" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICIQAdServices_CreateAdInstance_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAdInstance" />
+  </wsdl:message>
+  <wsdl:message name="ICIQAdServices_CreateAdInstance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAdInstanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICIQAdServices_GetAds_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAds" />
+  </wsdl:message>
+  <wsdl:message name="ICIQAdServices_GetAds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICIQAdServices_GetAd_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAd" />
+  </wsdl:message>
+  <wsdl:message name="ICIQAdServices_GetAd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICIQAdServices_SaveAd_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAd" />
+  </wsdl:message>
+  <wsdl:message name="ICIQAdServices_SaveAd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICIQAdServices_DeleteAd_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAd" />
+  </wsdl:message>
+  <wsdl:message name="ICIQAdServices_DeleteAd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICIQAdServices_UpdateAd_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAd" />
+  </wsdl:message>
+  <wsdl:message name="ICIQAdServices_UpdateAd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICIQAdServices">
+    <wsdl:operation name="CreateAdInstance">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICIQAdServices/CreateAdInstance" message="tns:ICIQAdServices_CreateAdInstance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICIQAdServices/CreateAdInstanceResponse" message="tns:ICIQAdServices_CreateAdInstance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAds">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICIQAdServices/GetAds" message="tns:ICIQAdServices_GetAds_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICIQAdServices/GetAdsResponse" message="tns:ICIQAdServices_GetAds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAd">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICIQAdServices/GetAd" message="tns:ICIQAdServices_GetAd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICIQAdServices/GetAdResponse" message="tns:ICIQAdServices_GetAd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAd">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICIQAdServices/SaveAd" message="tns:ICIQAdServices_SaveAd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICIQAdServices/SaveAdResponse" message="tns:ICIQAdServices_SaveAd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAd">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICIQAdServices/DeleteAd" message="tns:ICIQAdServices_DeleteAd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICIQAdServices/DeleteAdResponse" message="tns:ICIQAdServices_DeleteAd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAd">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICIQAdServices/UpdateAd" message="tns:ICIQAdServices_UpdateAd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICIQAdServices/UpdateAdResponse" message="tns:ICIQAdServices_UpdateAd_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICIQAdServices" type="tns:ICIQAdServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateAdInstance">
+      <soap:operation soapAction="http://tempuri.org/ICIQAdServices/CreateAdInstance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAds">
+      <soap:operation soapAction="http://tempuri.org/ICIQAdServices/GetAds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAd">
+      <soap:operation soapAction="http://tempuri.org/ICIQAdServices/GetAd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAd">
+      <soap:operation soapAction="http://tempuri.org/ICIQAdServices/SaveAd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAd">
+      <soap:operation soapAction="http://tempuri.org/ICIQAdServices/DeleteAd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAd">
+      <soap:operation soapAction="http://tempuri.org/ICIQAdServices/UpdateAd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CIQAdServices">
+    <wsdl:port name="BasicHttpBinding_ICIQAdServices" binding="tns:BasicHttpBinding_ICIQAdServices">
+      <soap:address location="http://127.0.0.1:81/CIQAdServices.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

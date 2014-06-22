@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CIQProductServices" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://127.0.0.1:81/CIQProductServices.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/CIQProductServices.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/CIQProductServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCFServiceWebRole" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/CIQProductServices.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICIQProductServices_CreateProductInstance_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateProductInstance" />
+  </wsdl:message>
+  <wsdl:message name="ICIQProductServices_CreateProductInstance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateProductInstanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICIQProductServices_Serialize_InputMessage">
+    <wsdl:part name="parameters" element="tns:Serialize" />
+  </wsdl:message>
+  <wsdl:message name="ICIQProductServices_Serialize_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SerializeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICIQProductServices_Deserialize_InputMessage">
+    <wsdl:part name="parameters" element="tns:Deserialize" />
+  </wsdl:message>
+  <wsdl:message name="ICIQProductServices_Deserialize_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeserializeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICIQProductServices_GetProductCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductCategories" />
+  </wsdl:message>
+  <wsdl:message name="ICIQProductServices_GetProductCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICIQProductServices_GetProductSubcategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductSubcategories" />
+  </wsdl:message>
+  <wsdl:message name="ICIQProductServices_GetProductSubcategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductSubcategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICIQProductServices_GetProductClassifications_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductClassifications" />
+  </wsdl:message>
+  <wsdl:message name="ICIQProductServices_GetProductClassifications_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductClassificationsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICIQProductServices">
+    <wsdl:operation name="CreateProductInstance">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICIQProductServices/CreateProductInstance" message="tns:ICIQProductServices_CreateProductInstance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICIQProductServices/CreateProductInstanceResponse" message="tns:ICIQProductServices_CreateProductInstance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Serialize">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICIQProductServices/Serialize" message="tns:ICIQProductServices_Serialize_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICIQProductServices/SerializeResponse" message="tns:ICIQProductServices_Serialize_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Deserialize">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICIQProductServices/Deserialize" message="tns:ICIQProductServices_Deserialize_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICIQProductServices/DeserializeResponse" message="tns:ICIQProductServices_Deserialize_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICIQProductServices/GetProductCategories" message="tns:ICIQProductServices_GetProductCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICIQProductServices/GetProductCategoriesResponse" message="tns:ICIQProductServices_GetProductCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductSubcategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICIQProductServices/GetProductSubcategories" message="tns:ICIQProductServices_GetProductSubcategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICIQProductServices/GetProductSubcategoriesResponse" message="tns:ICIQProductServices_GetProductSubcategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductClassifications">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICIQProductServices/GetProductClassifications" message="tns:ICIQProductServices_GetProductClassifications_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICIQProductServices/GetProductClassificationsResponse" message="tns:ICIQProductServices_GetProductClassifications_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICIQProductServices" type="tns:ICIQProductServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateProductInstance">
+      <soap:operation soapAction="http://tempuri.org/ICIQProductServices/CreateProductInstance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Serialize">
+      <soap:operation soapAction="http://tempuri.org/ICIQProductServices/Serialize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Deserialize">
+      <soap:operation soapAction="http://tempuri.org/ICIQProductServices/Deserialize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductCategories">
+      <soap:operation soapAction="http://tempuri.org/ICIQProductServices/GetProductCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductSubcategories">
+      <soap:operation soapAction="http://tempuri.org/ICIQProductServices/GetProductSubcategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductClassifications">
+      <soap:operation soapAction="http://tempuri.org/ICIQProductServices/GetProductClassifications" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CIQProductServices">
+    <wsdl:port name="BasicHttpBinding_ICIQProductServices" binding="tns:BasicHttpBinding_ICIQProductServices">
+      <soap:address location="http://127.0.0.1:81/CIQProductServices.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CIQBidServices" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://127.0.0.1:81/CIQBidServices.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/CIQBidServices.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/CIQBidServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCFServiceWebRole" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICIQBidServices_CreateBidInstance_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBidInstance" />
+  </wsdl:message>
+  <wsdl:message name="ICIQBidServices_CreateBidInstance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBidInstanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICIQBidServices_GetBids_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBids" />
+  </wsdl:message>
+  <wsdl:message name="ICIQBidServices_GetBids_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBidsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICIQBidServices_SaveBid_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveBid" />
+  </wsdl:message>
+  <wsdl:message name="ICIQBidServices_SaveBid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveBidResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICIQBidServices_DeleteBid_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBid" />
+  </wsdl:message>
+  <wsdl:message name="ICIQBidServices_DeleteBid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBidResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICIQBidServices_UpdateBid_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBid" />
+  </wsdl:message>
+  <wsdl:message name="ICIQBidServices_UpdateBid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBidResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICIQBidServices_ComputeScanHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:ComputeScanHistory" />
+  </wsdl:message>
+  <wsdl:message name="ICIQBidServices_ComputeScanHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ComputeScanHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICIQBidServices_AssociatedToAd_InputMessage">
+    <wsdl:part name="parameters" element="tns:AssociatedToAd" />
+  </wsdl:message>
+  <wsdl:message name="ICIQBidServices_AssociatedToAd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AssociatedToAdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICIQBidServices">
+    <wsdl:operation name="CreateBidInstance">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICIQBidServices/CreateBidInstance" message="tns:ICIQBidServices_CreateBidInstance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICIQBidServices/CreateBidInstanceResponse" message="tns:ICIQBidServices_CreateBidInstance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBids">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICIQBidServices/GetBids" message="tns:ICIQBidServices_GetBids_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICIQBidServices/GetBidsResponse" message="tns:ICIQBidServices_GetBids_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveBid">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICIQBidServices/SaveBid" message="tns:ICIQBidServices_SaveBid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICIQBidServices/SaveBidResponse" message="tns:ICIQBidServices_SaveBid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBid">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICIQBidServices/DeleteBid" message="tns:ICIQBidServices_DeleteBid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICIQBidServices/DeleteBidResponse" message="tns:ICIQBidServices_DeleteBid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBid">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICIQBidServices/UpdateBid" message="tns:ICIQBidServices_UpdateBid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICIQBidServices/UpdateBidResponse" message="tns:ICIQBidServices_UpdateBid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ComputeScanHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICIQBidServices/ComputeScanHistory" message="tns:ICIQBidServices_ComputeScanHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICIQBidServices/ComputeScanHistoryResponse" message="tns:ICIQBidServices_ComputeScanHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AssociatedToAd">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICIQBidServices/AssociatedToAd" message="tns:ICIQBidServices_AssociatedToAd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICIQBidServices/AssociatedToAdResponse" message="tns:ICIQBidServices_AssociatedToAd_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICIQBidServices" type="tns:ICIQBidServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateBidInstance">
+      <soap:operation soapAction="http://tempuri.org/ICIQBidServices/CreateBidInstance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBids">
+      <soap:operation soapAction="http://tempuri.org/ICIQBidServices/GetBids" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveBid">
+      <soap:operation soapAction="http://tempuri.org/ICIQBidServices/SaveBid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBid">
+      <soap:operation soapAction="http://tempuri.org/ICIQBidServices/DeleteBid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBid">
+      <soap:operation soapAction="http://tempuri.org/ICIQBidServices/UpdateBid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ComputeScanHistory">
+      <soap:operation soapAction="http://tempuri.org/ICIQBidServices/ComputeScanHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AssociatedToAd">
+      <soap:operation soapAction="http://tempuri.org/ICIQBidServices/AssociatedToAd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CIQBidServices">
+    <wsdl:port name="BasicHttpBinding_ICIQBidServices" binding="tns:BasicHttpBinding_ICIQBidServices">
+      <soap:address location="http://127.0.0.1:81/CIQBidServices.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

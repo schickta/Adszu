@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CIQProductIdentityServices" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://127.0.0.1:81/CIQProductIdentityServices.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/CIQProductIdentityServices.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://127.0.0.1:81/CIQProductIdentityServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCFServiceWebRole" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICIQProductIdentityServices_CreateProductIdentityInstance_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateProductIdentityInstance" />
+  </wsdl:message>
+  <wsdl:message name="ICIQProductIdentityServices_CreateProductIdentityInstance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateProductIdentityInstanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICIQProductIdentityServices_SaveProductIdentity_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProductIdentity" />
+  </wsdl:message>
+  <wsdl:message name="ICIQProductIdentityServices_SaveProductIdentity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProductIdentityResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICIQProductIdentityServices_QueryKind_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryKind" />
+  </wsdl:message>
+  <wsdl:message name="ICIQProductIdentityServices_QueryKind_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryKindResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICIQProductIdentityServices_MapIdentity_InputMessage">
+    <wsdl:part name="parameters" element="tns:MapIdentity" />
+  </wsdl:message>
+  <wsdl:message name="ICIQProductIdentityServices_MapIdentity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MapIdentityResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICIQProductIdentityServices_QueryIdentity_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryIdentity" />
+  </wsdl:message>
+  <wsdl:message name="ICIQProductIdentityServices_QueryIdentity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryIdentityResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICIQProductIdentityServices_QueryProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryProduct" />
+  </wsdl:message>
+  <wsdl:message name="ICIQProductIdentityServices_QueryProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryProductResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICIQProductIdentityServices">
+    <wsdl:operation name="CreateProductIdentityInstance">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICIQProductIdentityServices/CreateProductIdentityInstance" message="tns:ICIQProductIdentityServices_CreateProductIdentityInstance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICIQProductIdentityServices/CreateProductIdentityInstanceResponse" message="tns:ICIQProductIdentityServices_CreateProductIdentityInstance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveProductIdentity">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICIQProductIdentityServices/SaveProductIdentity" message="tns:ICIQProductIdentityServices_SaveProductIdentity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICIQProductIdentityServices/SaveProductIdentityResponse" message="tns:ICIQProductIdentityServices_SaveProductIdentity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryKind">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICIQProductIdentityServices/QueryKind" message="tns:ICIQProductIdentityServices_QueryKind_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICIQProductIdentityServices/QueryKindResponse" message="tns:ICIQProductIdentityServices_QueryKind_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MapIdentity">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICIQProductIdentityServices/MapIdentity" message="tns:ICIQProductIdentityServices_MapIdentity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICIQProductIdentityServices/MapIdentityResponse" message="tns:ICIQProductIdentityServices_MapIdentity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryIdentity">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICIQProductIdentityServices/QueryIdentity" message="tns:ICIQProductIdentityServices_QueryIdentity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICIQProductIdentityServices/QueryIdentityResponse" message="tns:ICIQProductIdentityServices_QueryIdentity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICIQProductIdentityServices/QueryProduct" message="tns:ICIQProductIdentityServices_QueryProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICIQProductIdentityServices/QueryProductResponse" message="tns:ICIQProductIdentityServices_QueryProduct_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICIQProductIdentityServices" type="tns:ICIQProductIdentityServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateProductIdentityInstance">
+      <soap:operation soapAction="http://tempuri.org/ICIQProductIdentityServices/CreateProductIdentityInstance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProductIdentity">
+      <soap:operation soapAction="http://tempuri.org/ICIQProductIdentityServices/SaveProductIdentity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryKind">
+      <soap:operation soapAction="http://tempuri.org/ICIQProductIdentityServices/QueryKind" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MapIdentity">
+      <soap:operation soapAction="http://tempuri.org/ICIQProductIdentityServices/MapIdentity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryIdentity">
+      <soap:operation soapAction="http://tempuri.org/ICIQProductIdentityServices/QueryIdentity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QueryProduct">
+      <soap:operation soapAction="http://tempuri.org/ICIQProductIdentityServices/QueryProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CIQProductIdentityServices">
+    <wsdl:port name="BasicHttpBinding_ICIQProductIdentityServices" binding="tns:BasicHttpBinding_ICIQProductIdentityServices">
+      <soap:address location="http://127.0.0.1:81/CIQProductIdentityServices.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

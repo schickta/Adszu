@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/WCFServiceWebRole" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCFServiceWebRole" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://127.0.0.1:81/CIQAffiliateServices.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ProductAds">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CProductAd" nillable="true" type="tns:CProductAd" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductAds" nillable="true" type="tns:ProductAds" />
+  <xs:complexType name="CProductAd">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AdGuid" type="ser:guid" />
+      <xs:element minOccurs="0" name="AdText" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AdTitle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BrandImageUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DiscountAmount" type="xs:double" />
+      <xs:element minOccurs="0" name="ImageUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsPercentage" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ManufacturerCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MarketerID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CProductAd" nillable="true" type="tns:CProductAd" />
+  <xs:complexType name="ProductProperties">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="entry">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="property" nillable="true" type="xs:string" />
+            <xs:element name="value" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductProperties" nillable="true" type="tns:ProductProperties" />
+</xs:schema>

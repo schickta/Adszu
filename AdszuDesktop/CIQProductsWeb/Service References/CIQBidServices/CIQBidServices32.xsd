@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://127.0.0.1:81/CIQBidServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCFServiceWebRole" />
+  <xs:element name="CreateBidInstance">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateBidInstanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WCFServiceWebRole" minOccurs="0" name="CreateBidInstanceResult" nillable="true" type="q1:CBid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBids">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MarketerID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBidsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WCFServiceWebRole" minOccurs="0" name="GetBidsResult" nillable="true" type="q2:ArrayOfCBid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveBid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WCFServiceWebRole" minOccurs="0" name="aBid" nillable="true" type="q3:CBid" />
+        <xs:element minOccurs="0" name="flattenedProduct" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveBidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveBidResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteBidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteBidResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WCFServiceWebRole" minOccurs="0" name="aBid" nillable="true" type="q4:CBid" />
+        <xs:element minOccurs="0" name="flattenedProduct" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateBidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateBidResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ComputeScanHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WCFServiceWebRole" minOccurs="0" name="aBid" nillable="true" type="q5:CBid" />
+        <xs:element minOccurs="0" name="bidProd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="howManyDaysBack" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ComputeScanHistoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ComputeScanHistoryResult" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssociatedToAd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="adID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AssociatedToAdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WCFServiceWebRole" minOccurs="0" name="AssociatedToAdResult" nillable="true" type="q6:ArrayOfCBid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

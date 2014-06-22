@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2431FBC0-FCA7-460F-BC09-69D071951B71}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WP7AdFinder</RootNamespace>
+    <AssemblyName>WP7AdFinder</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>WP7AdFinder.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>WP7AdFinder.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="Silverlight_ZXing_Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System.Device" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml" />
+    <Reference Include="mscorlib.extensions" />
+    <Reference Include="WP7_Barcode_Library, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="adlist.xaml.cs">
+      <DependentUpon>adlist.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="addetail.xaml.cs">
+      <DependentUpon>addetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="scan.xaml.cs">
+      <DependentUpon>scan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\CIQAffiliateServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\CIQProductIdentityServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\CIQProductServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Tag.xaml.cs">
+      <DependentUpon>Tag.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="adlist.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="addetail.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="scan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tag.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml" />
+    <None Include="Service References\CIQAffiliateServices\CIQAffiliateServices1.wsdl" />
+    <None Include="Service References\CIQAffiliateServices\CIQAffiliateServices3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CIQAffiliateServices\CIQAffiliateServices31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CIQAffiliateServices\CIQAffiliateServices32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CIQAffiliateServices\WP7AdFinder.CIQAffiliateServices.CProductAd.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CIQAffiliateServices\WP7AdFinder.CIQAffiliateServices.ProductAds.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CIQAffiliateServices\WP7AdFinder.CIQAffiliateServices.ProductProperties.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CIQProductIdentityServices\CIQProductIdentityServices1.wsdl" />
+    <None Include="Service References\CIQProductIdentityServices\CIQProductIdentityServices3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CIQProductIdentityServices\CIQProductIdentityServices31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CIQProductIdentityServices\CIQProductIdentityServices32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CIQProductIdentityServices\WP7AdFinder.CIQProductIdentityServices.CProductIdentity.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CIQProductIdentityServices\configuration91.svcinfo" />
+    <None Include="Service References\CIQProductIdentityServices\configuration.svcinfo" />
+    <None Include="Service References\CIQProductIdentityServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\CIQAffiliateServices\configuration91.svcinfo" />
+    <None Include="Service References\CIQAffiliateServices\configuration.svcinfo" />
+    <None Include="Service References\CIQAffiliateServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\CIQAffiliateServices\CIQAffiliateServices1.disco" />
+    <None Include="Service References\CIQProductIdentityServices\CIQProductIdentityServices1.disco" />
+    <None Include="Service References\CIQProductServices\CIQProductServices1.disco" />
+    <Content Include="ServiceReferences.ClientConfig">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Service References\CIQProductServices\CIQProductServices1.wsdl" />
+    <None Include="Service References\CIQProductServices\CIQProductServices4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CIQProductServices\CIQProductServices41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CIQProductServices\CIQProductServices42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CIQProductServices\CIQProductServices43.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CIQProductServices\WP7AdFinder.CIQProductServices.CProduct.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\Group 2.png" />
+    <Resource Include="Images\commerceiq_splash_logo.png" />
+    <Content Include="Barcode Bin\Silverlight_ZXing_Core.dll" />
+    <Content Include="Barcode Bin\WP7_Barcode_Library.dll" />
+    <Content Include="Images\appbar_home.png" />
+    <Content Include="Images\appbar_snap.png" />
+    <Content Include="Images\appbar_tag.png" />
+    <None Include="Service References\CIQProductServices\configuration91.svcinfo" />
+    <None Include="Service References\CIQProductServices\configuration.svcinfo" />
+    <None Include="Service References\CIQProductServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="SplashScreenImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CIQAffiliateServices\" />
+    <WCFMetadataStorage Include="Service References\CIQProductIdentityServices\" />
+    <WCFMetadataStorage Include="Service References\CIQProductServices\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>

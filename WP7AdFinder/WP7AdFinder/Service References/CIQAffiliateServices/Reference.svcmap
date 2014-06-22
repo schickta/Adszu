@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="4561c033-a9cf-44b3-8e48-5d56f624dacc" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://adszu.cloudapp.net/CIQAffiliateServices.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CIQAffiliateServices3.xsd" MetadataType="Schema" ID="3617befa-7d35-4833-976b-4e4fe1ac3bb5" SourceId="1" SourceUrl="http://adszu.cloudapp.net/CIQAffiliateServices.svc?xsd=xsd1" />
+    <MetadataFile FileName="CIQAffiliateServices1.wsdl" MetadataType="Wsdl" ID="b5d525d7-76f2-46a8-8fa4-49a9a13e7363" SourceId="1" SourceUrl="http://adszu.cloudapp.net/CIQAffiliateServices.svc?wsdl" />
+    <MetadataFile FileName="CIQAffiliateServices1.disco" MetadataType="Disco" ID="e508938f-731d-4520-b6d9-9ddafc86322a" SourceId="1" SourceUrl="http://adszu.cloudapp.net/CIQAffiliateServices.svc?disco" />
+    <MetadataFile FileName="CIQAffiliateServices31.xsd" MetadataType="Schema" ID="fc808ea5-5835-431f-bd8e-f24777c5c4af" SourceId="1" SourceUrl="http://adszu.cloudapp.net/CIQAffiliateServices.svc?xsd=xsd2" />
+    <MetadataFile FileName="CIQAffiliateServices32.xsd" MetadataType="Schema" ID="5849aad0-773f-4949-acf0-d175a48d04ca" SourceId="1" SourceUrl="http://adszu.cloudapp.net/CIQAffiliateServices.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

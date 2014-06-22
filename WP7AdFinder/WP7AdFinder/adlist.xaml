@@ -1,0 +1,61 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="WP7AdFinder.prodinfo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" shell:SystemTray.IsVisible="True" d:DesignHeight="696" d:DesignWidth="480">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/Group 2.png" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="10,15,0,0">
+            <TextBlock x:Name="ApplicationTitle" Text="Ad Finder" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="discounts" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+       
+        <ScrollViewer Height="600" Name="scrollViewer" Width="459" Grid.Row="1">
+            <StackPanel x:Name="controlStackPanel" >
+                <TextBlock HorizontalAlignment="Left" Margin="10,10,10,10" Name="prodText"  TextWrapping="Wrap" VerticalAlignment="Top" Width="450"  Foreground="#FF140202" FontFamily="Calibri" FontSize="32" FontStretch="Normal" />
+                <ListBox x:Name="adList" Height="500" Width="450" Foreground="#FF100101" Tap="adList_Tap" >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>                                
+                                <Line Stroke="#93A9FF" StrokeThickness="1" X1="10" Y1="0" X2="420" Y2="0" />   
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left"  >
+                                    <Image Source="{Binding BrandImageUrl}" Stretch="Fill" Width="70" Height="70" Margin="10, 10, 5, 10" />
+                                    <StackPanel HorizontalAlignment="Left">
+                                        <TextBlock Text="{Binding AdTitle}" TextWrapping="Wrap" Width="360" FontSize="32" Margin="5, 10, 10, 10" />
+                                        <TextBlock Text="{Binding AdText}" TextWrapping="Wrap" Width="360" FontSize="24" Margin="5, 0, 10, 10" />
+                                    </StackPanel>    
+                                </StackPanel>                                
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+
+                </ListBox>
+            </StackPanel>            
+        </ScrollViewer>
+    </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_home.png" Text="Home" Click="ApplicationBarIconButton_Click_Home"/>
+            <shell:ApplicationBarIconButton IconUri="Images/appbar_snap.png" Text="Snap" Click="ApplicationBarIconButton_Click_Snap"  />
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_tag.png" Text="Tag" Click="ApplicationBarIconButton_Click_Tag"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>

@@ -1,0 +1,53 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="WP7AdFinder.addetail"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" shell:SystemTray.IsVisible="True" d:DesignHeight="696" d:DesignWidth="480">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.Background>
+            <ImageBrush ImageSource="Images/Group 2.png" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="10,15,0,0">
+            <TextBlock x:Name="ApplicationTitle" Text="Ad Finder" Style="{StaticResource PhoneTextNormalStyle}"/>
+        </StackPanel>
+       
+        <ScrollViewer Height="600" Name="scrollViewer" Width="450" Grid.Row="1">
+            <StackPanel x:Name="controlStackPanel" >
+                <TextBlock HorizontalAlignment="Left" Margin="10,10,10,10" Name="adTitle"  TextWrapping="Wrap" VerticalAlignment="Top" Width="450"  Foreground="#FF140202" FontFamily="Calibri" FontSize="40" FontStretch="Normal" />
+                <TextBlock HorizontalAlignment="Left" Margin="10,10,10,10" Name="adDescription"  TextWrapping="Wrap" VerticalAlignment="Top" Width="450"  Foreground="#FF140202" FontFamily="Calibri" FontSize="32" FontStretch="Normal" />
+                <Image HorizontalAlignment="Center" Margin="10,10,10,10" Name="adImage" Width="350" Height="350" />
+                <Button Content="Add To Cart" Height="100" HorizontalAlignment="Center" Margin="10, 10, 10, 10" Name="addToCart" VerticalAlignment="Top" Width="200" FontFamily="Tahoma" FontSize="24" >
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF06BFED" Offset="0"/>
+                            <GradientStop Color="#FF0395BA" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+            </StackPanel>            
+        </ScrollViewer>
+    </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_home.png" Text="Home" Click="ApplicationBarIconButton_Click_Home"/>
+            <shell:ApplicationBarIconButton IconUri="Images/appbar_snap.png" Text="Snap" Click="ApplicationBarIconButton_Click_Snap"  />
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_tag.png" Text="Tag" Click="ApplicationBarIconButton_Click_Tag"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+</phone:PhoneApplicationPage>

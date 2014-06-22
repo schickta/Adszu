@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WCFServiceWebRole" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCFServiceWebRole" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="CProductIdentity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductCategory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductClass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductIdentity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductSubcategory" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CProductIdentity" nillable="true" type="tns:CProductIdentity" />
+  <xs:complexType name="ArrayOfCProductIdentity">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CProductIdentity" nillable="true" type="tns:CProductIdentity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCProductIdentity" nillable="true" type="tns:ArrayOfCProductIdentity" />
+</xs:schema>

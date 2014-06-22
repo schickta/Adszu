@@ -1,0 +1,7 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="WP7AdFinder" EntryPointType="WP7AdFinder.App" RuntimeVersion="4.7.50308.0">
+  <Deployment.Parts>
+    <AssemblyPart x:Name="WP7AdFinder" Source="WP7AdFinder.dll" />
+    <AssemblyPart x:Name="Silverlight_ZXing_Core" Source="Silverlight_ZXing_Core.dll" />
+    <AssemblyPart x:Name="WP7_Barcode_Library" Source="WP7_Barcode_Library.dll" />
+  </Deployment.Parts>
+</Deployment>

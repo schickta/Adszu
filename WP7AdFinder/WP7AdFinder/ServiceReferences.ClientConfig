@@ -1,0 +1,33 @@
+﻿<configuration>
+  <!-- Test Comment for BitBucket -->
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_ICIQProductServices" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_ICIQProductIdentityServices"
+                    maxBufferSize="2147483647" maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+                <binding name="BasicHttpBinding_ICIQPlatform" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://adszu.cloudapp.net/CIQAffiliateServices.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ICIQPlatform"
+                contract="CIQAffiliateServices.ICIQPlatform" name="BasicHttpBinding_ICIQPlatform" />
+            <endpoint address="http://adszu.cloudapp.net/CIQProductIdentityServices.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ICIQProductIdentityServices"
+                contract="CIQProductIdentityServices.ICIQProductIdentityServices"
+                name="BasicHttpBinding_ICIQProductIdentityServices" />
+            <endpoint address="http://adszu.cloudapp.net/CIQProductServices.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ICIQProductServices"
+                contract="CIQProductServices.ICIQProductServices" name="BasicHttpBinding_ICIQProductServices" />
+        </client>
+    </system.serviceModel>
+</configuration>

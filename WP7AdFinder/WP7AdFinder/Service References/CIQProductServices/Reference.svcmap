@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="fb993e58-8cb3-498f-9372-04e6c240760f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://adszu.cloudapp.net/CIQProductServices.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CIQProductServices4.xsd" MetadataType="Schema" ID="e83635b1-1d28-4d69-80cc-6fe10b0430bb" SourceId="1" SourceUrl="http://adszu.cloudapp.net/CIQProductServices.svc?xsd=xsd3" />
+    <MetadataFile FileName="CIQProductServices41.xsd" MetadataType="Schema" ID="14af5a1c-5e06-4433-a950-7bf4869b49bd" SourceId="1" SourceUrl="http://adszu.cloudapp.net/CIQProductServices.svc?xsd=xsd2" />
+    <MetadataFile FileName="CIQProductServices42.xsd" MetadataType="Schema" ID="28169538-6bdc-4406-98a8-e9fbaf014a7d" SourceId="1" SourceUrl="http://adszu.cloudapp.net/CIQProductServices.svc?xsd=xsd1" />
+    <MetadataFile FileName="CIQProductServices43.xsd" MetadataType="Schema" ID="34284498-d6c2-482d-a15f-b1cb5a345d6a" SourceId="1" SourceUrl="http://adszu.cloudapp.net/CIQProductServices.svc?xsd=xsd0" />
+    <MetadataFile FileName="CIQProductServices1.disco" MetadataType="Disco" ID="8126eab1-fedd-41db-b6e8-963c364d697b" SourceId="1" SourceUrl="http://adszu.cloudapp.net/CIQProductServices.svc?disco" />
+    <MetadataFile FileName="CIQProductServices1.wsdl" MetadataType="Wsdl" ID="a5df7f9e-04bf-4e28-9cb3-a61cbee44304" SourceId="1" SourceUrl="http://adszu.cloudapp.net/CIQProductServices.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

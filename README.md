@@ -15,7 +15,7 @@ This level of consumer targeting is the perfect ﬁt for the “new world order�
 
 The code for the Adszu platform, available via GitHub, resides in four folders:
 
-* Design: Concept, design, product and marketing documents.
+* Design: This folder contains concept, design, product and marketing documents.
 
 * Adszu Platform: This is the ad server itself. It is a Microsoft Visual Studio 2010 solution that can be deployed to the cloud on the Microsoft Azure platform.
 

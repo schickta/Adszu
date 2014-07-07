@@ -19,4 +19,6 @@ The code for the Adszu platform, available via GitHub, resides in three folders:
 
 * AdszuDesktop: A "thick client" .NET application (WinForms) that communicates with the Adszu plaform, and enables administrators to set up new Ad accounts, and create and deploy ads to the server.
 
-* WP7AdFinder: This Windows Phone 7 application (Silverlight) demonstrates the consumer capabilities of the platform. It enables the user to scan a QR Code with their WP7 phone, then send the code to the Adszu platform which analyzes the code, determines the most-appropriate ads to display. WP7AdFinder displays the ads returned by the platform.
+* WP7AdFinder: This Windows Phone 7 application (Silverlight) demonstrates the consumer capabilities of the platform. It enables the user to scan a QR Code with their WP7 phone, then send the code to the Adszu platform which analyzes the code, and determines the most-appropriate ads to display. WP7AdFinder displays the ads returned by the platform.
+
+The Adszu concept and source code is copyright by Todd Schick and is for demonstration purposes only. It may not be used for any purpose without written permission by Todd Schick.

@@ -13,7 +13,9 @@ This level of consumer targeting is the perfect ﬁt for the “new world order�
 
 ###Adszu on GitHub###
 
-The code for the Adszu platform, available via GitHub, resides in three folders:
+The code for the Adszu platform, available via GitHub, resides in four folders:
+
+* Design: Concept, design, product and marketing documents.
 
 * Adszu Platform: This is the ad server itself. It is a Microsoft Visual Studio 2010 solution that can be deployed to the cloud on the Microsoft Azure platform.
 
@@ -21,4 +23,4 @@ The code for the Adszu platform, available via GitHub, resides in three folders:
 
 * WP7AdFinder: This Windows Phone 7 application (Silverlight) demonstrates the consumer capabilities of the platform. It enables the user to scan a QR Code with their WP7 phone, then send the code to the Adszu platform which analyzes the code, and determines the most-appropriate ads to display. WP7AdFinder displays the ads returned by the platform.
 
-The Adszu concept and source code is copyright by Todd Schick and is for demonstration purposes only. It may not be used for any purpose without written permission by Todd Schick.
+The Adszu concept and source code is copyright (c) by Todd Schick and is for demonstration purposes only. It may not be used for any purpose without written permission by Todd Schick.

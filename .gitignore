@@ -35,10 +35,12 @@ Icon
 .Spotlight-V100
 .Trashes
 
-AdszuPlatform/*.sln
+AdszuPlatform/CIQPlatform.sln
 AdszuPlatform/*.suo
 AdszuPlatform/*.xml
 AdszuPlatform/*.htm
+AdszuPlatform/*.csproj
+AdszuPlatform/*.cs
 AdszuPlatform/CIQPlatform.sln
 AdszuPlatform/WCFServiceWebRole1/CIQPlatformModel.Designer.cs
 AdszuPlatform/Backup/*

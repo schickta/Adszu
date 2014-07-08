@@ -1,6 +1,11 @@
 Adszu
 =====
 
+![Adszu is a Service Oriented Architecture](http://www.mogo.us/mogo/adszuimages/adszuarch.png)
+
+![Adszu Services](http://www.mogo.us/mogo/adszuimages/adszuservices.png)
+
+
 Adszu is an advertisting platform meant to target shoppers in big box electroncs, appliance, and hardware stores, even CPG's like grocery stores. The idea behind Adszu is to enable manufacturers to reach out to consumers precisely at the time that they are making a purchase decision. An excerpt from the "Adszu Overview" (found in the Design folder) describes the platform further as:
 
 ###The Marketing Platform of the Future—Now###

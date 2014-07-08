@@ -34,3 +34,13 @@ Icon
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
+
+AdszuPlatform/*.sln
+AdszuPlatform/*.suo
+AdszuPlatform/*.xml
+AdszuPlatform/*.htm
+AdszuPlatform/CIQPlatform.sln
+AdszuPlatform/WCFServiceWebRole1/CIQPlatformModel.Designer.cs
+AdszuPlatform/Backup/*
+AdszuPlatform/_UpgradeReport_Files/*
+AdszuPlatform/WCFServiceWebRole1/obj/*
